@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   fetch_weather_seoul_5m:
-    runs-on: ubuntu-1atest
+    runs-on: ubuntu-latest
 
     steps:
       - name: 저장소 체크아웃
@@ -19,12 +19,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.9"
-
+          
       - name: 필요한 패키지 설치
         run: pip install requests
-
+        
       - name: 날씨 데이터 가져오기
-        env: 
+        env:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         run: python seoul_weather_5m.py
 
