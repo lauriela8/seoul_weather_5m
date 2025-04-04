@@ -14,7 +14,7 @@ data = response.json()
 temp = data["main"]["temp"]
 time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-csv_filename = "Seoul_weather.csv"
+csv_filename = "seoul_weather.csv"
 header = ["time", "temp"]
 
 # "Seoul_weather.csv" 없다면 새로 생성
